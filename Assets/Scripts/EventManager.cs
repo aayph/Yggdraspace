@@ -10,4 +10,11 @@ public class EventManager
     {
         SampleActions?.Invoke(data);
     }
+
+    public static event Action<GameObject> ShipActions;
+    public static void OnShipClickEvent(GameObject ship)
+    {
+        ShipActions?.Invoke(ship);
+    }
+
 }
