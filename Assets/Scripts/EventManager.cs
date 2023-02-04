@@ -11,10 +11,17 @@ public class EventManager
         SampleActions?.Invoke(data);
     }
 
-    public static event Action<GameObject> ShipActions;
+    public static event Action<GameObject> ShipAction;
     public static void OnShipClickEvent(GameObject ship)
     {
-        ShipActions?.Invoke(ship);
+        ShipAction?.Invoke(ship);
     }
+
+    public static event Action<Vector3> ShipTravelAction;
+    public static void TravelTargetSelected(Vector3 target)
+    {
+        ShipTravelAction?.Invoke(target);
+    }
+
 
 }
