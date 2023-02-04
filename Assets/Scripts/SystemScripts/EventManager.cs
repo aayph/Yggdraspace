@@ -64,4 +64,9 @@ public class EventManager
     }
 
 
+    public static event Action<Planet, bool> PlanetHoverAction;
+    public static void PlanetHoverEvent(Planet planet, bool isOpened)
+    {
+        PlanetHoverAction?.Invoke(planet, isOpened);
+    }
 }
