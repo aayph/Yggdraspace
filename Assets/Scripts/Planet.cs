@@ -6,10 +6,11 @@ using UnityEngine;
 [RequireComponent(typeof(Storage), typeof(RessourceReducer))]
 public class Planet : MonoBehaviour
 {
+    public Blueprint[] constructionList;
     public Storage storage;
     RessourceReducer reducer;
 
-    public PlanetStructure structures;
+    public List<PlanetStructure> structures;
     public string planetName;
 
     private void Start()
@@ -28,5 +29,18 @@ public class Planet : MonoBehaviour
     }
     private void OnMouseExit(){
         EventManager.PlanetHoverEvent(this,false);
+    }
+
+    public void Construct(Blueprint blueprint)
+    {
+        storage.resources -= blueprint.costs;
+        if (blueprint.isBuilding)
+        {
+            structures.Add(new PlanetStructure(blueprint));
+        } else
+        {
+            GameObject newObject = Instantiate(blueprint.prefab);
+            newObject.transform.position = transform.position + Vector3.up;
+        }
     }
 }

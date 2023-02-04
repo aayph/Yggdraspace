@@ -34,8 +34,8 @@ public class Resources
     {
         Resources r = new Resources();
         r.organic = value1.organic + value2.organic;
-        r.organic = value1.metal + value2.metal;
-        r.organic = value1.water + value2.water;
+        r.metal = value1.metal + value2.metal;
+        r.water = value1.water + value2.water;
         return r;
     }
 
@@ -43,8 +43,8 @@ public class Resources
     {
         Resources r = new Resources();
         r.organic = value1.organic - value2.organic;
-        r.organic = value1.metal - value2.metal;
-        r.organic = value1.water - value2.water;
+        r.metal = value1.metal - value2.metal;
+        r.water = value1.water - value2.water;
         return r;
     }
 
