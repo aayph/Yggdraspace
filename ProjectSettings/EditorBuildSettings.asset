@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mara.unity
     guid: 363313e9c66d7fd4496a928ff4557522
+  - enabled: 1
+    path: Assets/Scenes/Level_01.unity
+    guid: 142c1b3c5f5cf9444b1367cdb14b757e
   m_configObjects: {}
