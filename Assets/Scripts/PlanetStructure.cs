@@ -30,4 +30,21 @@ public class PlanetStructure
     {
         return (finishTime <= GameStates.gameTime);
     }
+
+    public static string GetStructureList(PlanetStructure[] structures)
+    {
+        string s = "";
+
+        Dictionary<string, int> keyValuePairs = new Dictionary<string, int>();
+        foreach (PlanetStructure structure in structures)
+            if (keyValuePairs.ContainsKey(structure.identifer))
+                keyValuePairs[structure.identifer]++;
+            else
+                keyValuePairs[structure.identifer] = 1;
+
+        foreach (string key in keyValuePairs.Keys)
+            s += key+ ": " + keyValuePairs[key].ToString()+"\n";
+
+        return s;
+    }
 }

@@ -69,4 +69,11 @@ public class EventManager
     {
         PlanetHoverAction?.Invoke(planet, isOpened);
     }
+
+
+    public static event Action<string, string, Resources> TooltipAction;
+    public static void TooltipEvent(string title, string content, Resources res)
+    {
+        TooltipAction?.Invoke(title, content, res);
+    }
 }

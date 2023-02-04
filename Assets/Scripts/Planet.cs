@@ -32,10 +32,12 @@ public class Planet : MonoBehaviour
     }
     private void OnMouseEnter()
     {
-        EventManager.PlanetHoverEvent(this, true);
+        EventManager.TooltipEvent(planetName, PlanetStructure.GetStructureList(structures.ToArray()), storage.resources);
     }
-    private void OnMouseExit(){
-        EventManager.PlanetHoverEvent(this, false);
+
+    private void OnMouseExit()
+    {
+        EventManager.TooltipEvent("", "", null);
     }
 
     public void Construct(Blueprint blueprint)

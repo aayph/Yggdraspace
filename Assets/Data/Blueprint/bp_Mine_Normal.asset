@@ -16,7 +16,11 @@ MonoBehaviour:
   planetLimit: 3
   identifier: Mine
   requiredStructure: 
-  description: 
+  description: 'Turn manual labor that needs to be feed into real Viking metal!
+
+
+    per
+    Second:'
   prefab: {fileID: 0}
   costs:
     organic: 5

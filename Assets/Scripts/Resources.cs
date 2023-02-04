@@ -24,6 +24,11 @@ public class Resources
         return (organic >= value.organic && metal >= value.metal && water >= value.water);
     }
 
+    public bool HasValue()
+    {
+        return (organic != 0 || metal != 0 || water != 0);
+    }
+
     public static Resources operator *(Resources value, float factor)
     {
         Resources r = new Resources();

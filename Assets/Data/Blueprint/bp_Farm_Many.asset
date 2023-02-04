@@ -16,7 +16,11 @@ MonoBehaviour:
   planetLimit: 6
   identifier: Farm
   requiredStructure: 
-  description: Enables to construct ships.
+  description: 'Transforms the water resources on the planet into food.
+
+
+    per
+    Second:'
   prefab: {fileID: 0}
   costs:
     organic: 10
