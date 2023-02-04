@@ -35,6 +35,7 @@ public class AudioManager : MonoBehaviour
         audioSource.clip = clickSound;
         audioSource.volume = Random.Range(0.8f, 1);
         audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.Play();
     }
 
     public void PlayBackgroundMusic()
