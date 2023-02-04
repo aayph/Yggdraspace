@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5574928336149549770}
   m_Layer: 0
-  m_Name: P_Yggdrasil
+  m_Name: P_Art_Yggdrasil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
