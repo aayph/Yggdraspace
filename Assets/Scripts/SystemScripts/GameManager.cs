@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(Instance.mainMenuScene, LoadSceneMode.Single);
         activeScene = ActiveScene.MainMenu;
+        EventManager.SceneChanged(ActiveScene.MainMenu);
     }
 
     public static void StartNewGame()
@@ -49,6 +50,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(Instance.gameScene, LoadSceneMode.Single);
         GameStates.Reset();
         activeScene = ActiveScene.Game;
+        EventManager.SceneChanged(ActiveScene.Game);
+        EventManager.GameProgressUpdated(0f);
+        EventManager.DangerLevelUpdated(0f);
     }
 
     public static void InitPlayerPrefs()

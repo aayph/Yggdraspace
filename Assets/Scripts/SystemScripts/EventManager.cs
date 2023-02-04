@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static GameManager;
 
 public class EventManager
 {
@@ -38,4 +39,29 @@ public class EventManager
     {
         PlayerPrefsUpdate?.Invoke(identifier);
     }
+
+
+    //0f - 2f
+    public static event Action<float> GameProgressUpdate;
+    public static void GameProgressUpdated(float gameProgress)
+    {
+        GameProgressUpdate?.Invoke(gameProgress);
+    }
+
+
+    //0f - 3f
+    public static event Action<float> DangerLevelUpdate;
+    public static void DangerLevelUpdated(float dangerLevel)
+    {
+        DangerLevelUpdate?.Invoke(dangerLevel);
+    }
+
+
+    public static event Action<GameManager.ActiveScene> SceneChange;
+    public static void SceneChanged(GameManager.ActiveScene newScene)
+    {
+        SceneChange?.Invoke(newScene);
+    }
+
+
 }
