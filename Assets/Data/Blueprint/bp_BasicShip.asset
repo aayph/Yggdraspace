@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: bp_BasicShip
   m_EditorClassIdentifier: 
   identifier: BasicShip
-  prefab: {fileID: 642995705740874127, guid: 3037f37ab2ad9a6449c312e13e32afd0, type: 3}
+  prefab: {fileID: 415280886198591790, guid: 77a63b97a3ca41c44bf72e9435cb53b2, type: 3}
   costs:
     organic: 0
     metal: 30
     water: 10
   isBuilding: 0
+  constructionTime: 0
   requiredStructure: Hangar
