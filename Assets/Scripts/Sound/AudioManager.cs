@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource musicSource1;
     
-    private void OnDangerLevelUpdate(float dangerLevel)
+    private void OnDangerLevelUpdate(int dangerLevel)
     {
 
     }
