@@ -30,4 +30,12 @@ public class EventManager
     {
         PlanetAction?.Invoke(planet);
     }
+
+
+
+    public static event Action<string> PlayerPrefsUpdate;
+    public static void PlayerPrefsUpdated(string identifier)
+    {
+        PlayerPrefsUpdate?.Invoke(identifier);
+    }
 }
