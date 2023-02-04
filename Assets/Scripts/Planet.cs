@@ -9,6 +9,7 @@ public class Planet : MonoBehaviour
     Storage storage;
     RessourceReducer reducer;
 
+    public PlanetStructure structures;
     public string planetName;
 
     private void Start()

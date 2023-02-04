@@ -10,5 +10,6 @@ public class Blueprint : ScriptableObject
     public GameObject prefab;
     public Resources costs;
     public bool isBuilding;
+    public float constructionTime;
     public string requiredStructure;
 }
