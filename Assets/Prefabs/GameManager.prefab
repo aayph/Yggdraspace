@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuScene: MainMenu
-  gameScene: Mara
+  gameScene: Level_01
 --- !u!114 &3709710566138496576
 MonoBehaviour:
   m_ObjectHideFlags: 0
