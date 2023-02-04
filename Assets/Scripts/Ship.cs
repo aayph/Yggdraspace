@@ -18,6 +18,8 @@ public class Ship : MonoBehaviour
 
     // AUDIO
     private AudioSource audioSource;
+    public AudioClip flySound;
+    public AudioClip landSound;
 
     // Start is called before the first frame update
     void Start()
@@ -83,10 +85,15 @@ public class Ship : MonoBehaviour
             ResetTravelValues();
             Debug.Log("Can't afford this journey");
         }
+        else
+        {
+            // AUDIO
+            audioSource.clip = flySound;
+            audioSource.loop = true;
+            audioSource.Play();
+        }
 
-        // AUDIO
-        audioSource.loop = true;
-        audioSource.Play();
+
     }
 
     private void FinsishTravel()
@@ -100,6 +107,8 @@ public class Ship : MonoBehaviour
         ResetTravelValues();
         audioSource.loop = false;
         audioSource.Stop();
+        audioSource.clip = landSound;
+        audioSource.Play();
     }
 
     private void ResetTravelValues()

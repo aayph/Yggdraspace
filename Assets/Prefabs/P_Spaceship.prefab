@@ -62,6 +62,8 @@ MonoBehaviour:
   EnergyConsumptionrate: 1
   TravelSpeed: 2
   closestPlanet: {fileID: 0}
+  flySound: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
+  landSound: {fileID: 8300000, guid: 1b6460d85722dbc418ff4e2842596bbb, type: 3}
 --- !u!65 &415280886198591776
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -117,7 +119,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2225780866552897617, guid: 486d63aafb043a147abd30466490af3e, type: 2}
-  m_audioClip: {fileID: 8300000, guid: e62273b263c7b854bbeacf7c1a8b1247, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -127,7 +129,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
+  MinDistance: 5
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
