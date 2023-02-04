@@ -17,4 +17,6 @@ public class Blueprint : ScriptableObject
     public GameObject prefab;
     public Resources costs;
     public float constructionTime = 0f;
+    [Space]
+    public Resources perSecondChange;
 }

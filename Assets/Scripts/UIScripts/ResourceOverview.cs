@@ -12,8 +12,8 @@ public class ResourceOverview : MonoBehaviour
 
     public void UpdateNumbers(Resources resources)
     {
-        organicNumberField.text = Math.Round(resources.organic, 2).ToString();
-        metalNumberField.text = Math.Round(resources.metal, 2).ToString();
-        waterNumberField.text = Math.Round(resources.water, 2).ToString();
+        organicNumberField.text = String.Format("{0:0.0}", resources.organic);
+        metalNumberField.text = String.Format("{0:0.0}", resources.metal);
+        waterNumberField.text = String.Format("{0:0.0}", resources.water);
     }
 }

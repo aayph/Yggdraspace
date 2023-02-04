@@ -8,6 +8,7 @@ public class Planet : MonoBehaviour
 {
     public Blueprint[] constructionList;
     public Storage storage;
+    public bool isDead = false;
     RessourceReducer reducer;
 
     public List<PlanetStructure> structures;
@@ -19,16 +20,22 @@ public class Planet : MonoBehaviour
         reducer = GetComponent<RessourceReducer>();
     }
 
+    private void Update()
+    {
+        isDead = (storage.resources.organic <= 0);
+    }
+
     private void OnMouseDown()
     {
-        EventManager.PlanetClickedEvent(this);
+        if (!isDead)
+            EventManager.PlanetClickedEvent(this);
     }
     private void OnMouseEnter()
     {
-        EventManager.PlanetHoverEvent(this,true);
+        EventManager.PlanetHoverEvent(this, true);
     }
     private void OnMouseExit(){
-        EventManager.PlanetHoverEvent(this,false);
+        EventManager.PlanetHoverEvent(this, false);
     }
 
     public void Construct(Blueprint blueprint)
@@ -37,6 +44,7 @@ public class Planet : MonoBehaviour
         if (blueprint.isBuilding)
         {
             structures.Add(new PlanetStructure(blueprint));
+            reducer.transformer.Add(blueprint.perSecondChange);
         } else
         {
             GameObject newObject = Instantiate(blueprint.prefab);
