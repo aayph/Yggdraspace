@@ -47,8 +47,8 @@ public class Tooltip : MonoBehaviour
 
         titleField.text = title;
         textField.text = text;
-        resOverview.enabled = (res != null && res.HasValue());
         resOverview.UpdateNumbers(res);
+        resOverview.gameObject.SetActive((res != null && res.HasValue()));
         canvasGroup.alpha = 1f;
     }
 }

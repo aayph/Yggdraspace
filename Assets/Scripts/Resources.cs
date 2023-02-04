@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
@@ -23,7 +24,6 @@ public class Resources
     {
         return (organic >= value.organic && metal >= value.metal && water >= value.water);
     }
-
     public bool HasValue()
     {
         return (organic != 0 || metal != 0 || water != 0);
