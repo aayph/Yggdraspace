@@ -24,4 +24,10 @@ public class EventManager
     }
 
 
+
+    public static event Action<Planet> PlanetAction;
+    public static void PlanetClickedEvent(Planet planet)
+    {
+        PlanetAction?.Invoke(planet);
+    }
 }
