@@ -5,6 +5,8 @@ using TMPro;
 
 public class ShipUI : MonoBehaviour
 {
+    public enum ResourceType {water, organic, metal}
+
     public TextMeshProUGUI[] resourcesTexts;
     private GameObject associatedShip;
 
@@ -23,10 +25,7 @@ public class ShipUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         associatedShip = ship;
-        Resources res = ship.GetComponent<Ship>().storage.resources;
-        resourcesTexts[0].SetText("Brokolie " + res.organic);
-        resourcesTexts[1].SetText("Water " + res.water);
-        resourcesTexts[2].SetText("Metal " + res.metal);
+        UpdateInterface();
     }
 
     public void clickOnSendShipButton()
@@ -35,6 +34,75 @@ public class ShipUI : MonoBehaviour
         GameStates.traveler = associatedShip;
         gameObject.SetActive(false);
     }
+
+    private void UpdateInterface()
+    {
+        Resources res = associatedShip.GetComponent<Ship>().storage.resources;
+        resourcesTexts[0].SetText("Brokolie " + res.organic);
+        resourcesTexts[1].SetText("Water " + res.water);
+        resourcesTexts[2].SetText("Metal " + res.metal);
+    }
+
+    public void CloseUI()
+    {
+        gameObject.SetActive(false);
+    }
+
+    // TODO I would love to improve this scetion
+
+    public void TransferWater(float amount)
+    {
+        TransferResource(ResourceType.water, amount);
+    }
+
+    public void TransferMetal(float amount)
+    {
+        TransferResource(ResourceType.metal, amount);
+    }
+
+    public void TransferOrganic(float amount)
+    {
+        TransferResource(ResourceType.organic, amount);
+    }
+
+    public void TransferResource(ResourceType type, float amount)
+    {
+        GameObject planet = associatedShip.GetComponent<Ship>().closestPlanet;
+        if (planet == null)
+        {
+            return;
+        }
+
+        Storage transmitter;
+        Storage reciever;
+        if (amount > 0)
+        {
+            reciever = associatedShip.GetComponent<Storage>();
+            transmitter = planet.GetComponent<Storage>();
+        }
+        else
+        {
+            transmitter  = associatedShip.GetComponent<Storage>();
+            reciever = planet.GetComponent<Storage>();
+            amount *= -1;
+        }
+
+        switch (type)
+        {
+            case ResourceType.metal:
+                transmitter.transferMetal(reciever, amount);
+                break;
+            case ResourceType.water:
+                transmitter.transferWater(reciever, amount);
+                break;
+            case ResourceType.organic:
+                transmitter.transferOrganic(reciever, amount);
+                break;
+        }
+
+        UpdateInterface();
+    }
+
 
 
 }
