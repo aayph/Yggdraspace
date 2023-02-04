@@ -49,9 +49,9 @@ public class EventManager
     }
 
 
-    //0f - 3f
-    public static event Action<float> DangerLevelUpdate;
-    public static void DangerLevelUpdated(float dangerLevel)
+    //0 - 2
+    public static event Action<int> DangerLevelUpdate;
+    public static void DangerLevelUpdated(int dangerLevel)
     {
         DangerLevelUpdate?.Invoke(dangerLevel);
     }
