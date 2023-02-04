@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public string mainMenuScene;
     public string gameScene;
 
+    private AudioManager audioManager;
+
     private void Awake()
     {
         if (Instance != null)
@@ -23,7 +25,13 @@ public class GameManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        audioManager = GetComponent<AudioManager>();
         InitPlayerPrefs();
+    }
+
+    public AudioManager GetAudioManager()
+    {
+        return audioManager;
     }
 
     private void Start()
