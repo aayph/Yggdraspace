@@ -14,7 +14,7 @@ public class Ship : MonoBehaviour
     private Vector3 travelDirection;
 
     // For Orbiting
-    private GameObject closestPlanet;
+    public GameObject closestPlanet;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +85,8 @@ public class Ship : MonoBehaviour
         if (closestPlanet != null)
         {
             // WIP
+            Storage planetStorage = closestPlanet.GetComponentInChildren<Storage>();
+            storage.transferAllResources(planetStorage);
         }
         ResetTravelValues();
     }
@@ -96,17 +98,17 @@ public class Ship : MonoBehaviour
         travelDirection = Vector3.zero;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.tag == "Planet")
+        if (collider.gameObject.tag == "Planet")
         {
-            closestPlanet = gameObject;
+            closestPlanet = collider.gameObject;
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider collider)
     {
-        if (collision.gameObject.tag == "Planet")
+        if (collider.gameObject.tag == "Planet")
         {
             if (closestPlanet == gameObject)
             {
@@ -114,4 +116,5 @@ public class Ship : MonoBehaviour
             }            
         }
     }
+
 }

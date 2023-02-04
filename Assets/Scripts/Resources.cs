@@ -47,4 +47,11 @@ public class Resources
         r.organic = value1.water - value2.water;
         return r;
     }
+
+    public void setEmpty()
+    {
+        organic = 0;
+        metal = 0;
+        water = 0;
+    }
 }
