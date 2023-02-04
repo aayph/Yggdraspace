@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Storage), typeof(RessourceReducer))]
 public class Planet : MonoBehaviour
 {
-    Storage storage;
+    public Storage storage;
     RessourceReducer reducer;
 
     public PlanetStructure structures;
@@ -21,5 +21,12 @@ public class Planet : MonoBehaviour
     private void OnMouseDown()
     {
         EventManager.PlanetClickedEvent(this);
+    }
+    private void OnMouseEnter()
+    {
+        EventManager.PlanetHoverEvent(this,true);
+    }
+    private void OnMouseExit(){
+        EventManager.PlanetHoverEvent(this,false);
     }
 }
