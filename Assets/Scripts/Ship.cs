@@ -37,6 +37,7 @@ public class Ship : MonoBehaviour
     {
         if (IsTraveling)
         {
+            transform.Rotate(0, Vector3.Angle(travelDirection, transform.forward), 0, Space.Self);
             transform.position = transform.position + travelDirection * TravelSpeed * Time.deltaTime;
             storage.resources.water -= EnergyConsumptionrate * Time.deltaTime;
             TravelTimer -= Time.deltaTime;
