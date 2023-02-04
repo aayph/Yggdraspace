@@ -64,6 +64,7 @@ public class PlanetInterface : MonoBehaviour
             item.transform.localPosition += Vector3.down * count * 100;
             item.planetUI = this;
             item.SetData(blueprint);
+            item.UpdateStates(selectedPlanet);
             constructionItems.Add(item);
             count++;
         }
@@ -88,5 +89,7 @@ public class PlanetInterface : MonoBehaviour
     public void Construct(Blueprint blueprint)
     {
         selectedPlanet.Construct(blueprint);
+        foreach (ConstructionItem constructionItem in constructionItems)
+            constructionItem.UpdateStates(selectedPlanet);
     }
 }

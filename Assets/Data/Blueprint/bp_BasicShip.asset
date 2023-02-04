@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bd5c1949ef845418eed5cdf7abf45d, type: 3}
   m_Name: bp_BasicShip
   m_EditorClassIdentifier: 
-  identifier: BasicShip
+  isBuilding: 0
+  planetLimit: 0
+  identifier: Transport Ship
+  requiredStructure: Hangar
+  description: Ship to transport stuff.
   prefab: {fileID: 415280886198591790, guid: 77a63b97a3ca41c44bf72e9435cb53b2, type: 3}
   costs:
     organic: 0
     metal: 30
     water: 10
-  isBuilding: 0
   constructionTime: 0
-  requiredStructure: Hangar
