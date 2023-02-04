@@ -16,11 +16,15 @@ public class Ship : MonoBehaviour
     // For Orbiting
     public GameObject closestPlanet;
 
+    // AUDIO
+    private AudioSource audioSource;
+
     // Start is called before the first frame update
     void Start()
     {
         storage = gameObject.GetComponentInChildren<Storage>();
         EventManager.ShipTravelAction += TravelToTarget;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnDestroy()
@@ -77,7 +81,11 @@ public class Ship : MonoBehaviour
             // TODO Pop Up Can't afford this journey
             ResetTravelValues();
             Debug.Log("Can't afford this journey");
-        }       
+        }
+
+        // AUDIO
+        audioSource.loop = true;
+        audioSource.Play();
     }
 
     private void FinsishTravel()
@@ -89,6 +97,8 @@ public class Ship : MonoBehaviour
             storage.transferAllResources(planetStorage);
         }
         ResetTravelValues();
+        audioSource.loop = false;
+        audioSource.Stop();
     }
 
     private void ResetTravelValues()
