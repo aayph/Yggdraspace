@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class APlanet : MonoBehaviour
 {
+    float time = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,6 @@ public class APlanet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //not used atm;
+        time += Time.deltaTime;
     }
 }
