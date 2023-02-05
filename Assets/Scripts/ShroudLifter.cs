@@ -6,16 +6,26 @@ using UnityEngine;
 public class ShroudLifter : MonoBehaviour
 {
     public Planet planet;
-    
    
-    void Start()
+    void Awake()
     {
+        if (planet.isExplored)
+        {
+            transform.localScale = Vector3.zero;
+            return;
+        }
         EventManager.PlanetExploreAction += EventManager_PlanetExploreAction;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.PlanetExploreAction -= EventManager_PlanetExploreAction;
     }
 
     private void EventManager_PlanetExploreAction(Planet obj)
     {
-        StartCoroutine(ReduceScale( 0f));
+        if (obj != planet) return;
+        StartCoroutine(ReduceScale(0f));
     }
    
     IEnumerator ReduceScale(float targetscaling)
@@ -26,9 +36,5 @@ public class ShroudLifter : MonoBehaviour
             transform.localScale -= reducingrate * Time.deltaTime * Vector3.one;
             yield return null;
         }
-    }
-    private void OnDestroy()
-    {
-        EventManager.PlanetExploreAction -= EventManager_PlanetExploreAction;
     }
 }
