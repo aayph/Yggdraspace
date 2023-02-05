@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     private AudioManager audioManager;
 
+    public Blender blender;
+
     private void Awake()
     {
         if (Instance != null)
@@ -38,17 +40,20 @@ public class GameManager : MonoBehaviour
         return audioManager;
     }
 
-    private void Start()
+    private IEnumerator Start()
     {
+        yield return null;
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             LoadMainMenu();
+            blender.BlendIn(1f);
         }
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             activeScene = ActiveScene.MainMenu;
             EventManager.SceneChanged(ActiveScene.MainMenu);
             EventManager.GameProgressUpdated(0f);
+            blender.BlendIn(1f);
         }
         else
         {
@@ -56,6 +61,7 @@ public class GameManager : MonoBehaviour
             activeScene = ActiveScene.Game;
             EventManager.SceneChanged(ActiveScene.Game);
             EventManager.GameProgressUpdated(0f);
+            blender.BlendIn(1f);
         }
     }
 
@@ -112,19 +118,35 @@ public class GameManager : MonoBehaviour
 
     public static void LoadMainMenu()
     {
+        Instance.StartCoroutine(Instance.LoadMain());
+    }
+
+    public IEnumerator LoadMain()
+    {
+        blender.BlendOut(0f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(Instance.mainMenuScene, LoadSceneMode.Single);
         activeScene = ActiveScene.MainMenu;
         EventManager.SceneChanged(ActiveScene.MainMenu);
         EventManager.GameProgressUpdated(0f);
+        blender.BlendIn(1f);
     }
 
     public static void StartNewGame()
     {
+        Instance.StartCoroutine(Instance.StartGame());
+    }
+
+    public IEnumerator StartGame()
+    {
+        blender.BlendOut(0f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene(Instance.gameScene, LoadSceneMode.Single);
         GameStates.Reset();
         activeScene = ActiveScene.Game;
         EventManager.SceneChanged(ActiveScene.Game);
         EventManager.GameProgressUpdated(0f);
+        blender.BlendIn(1f);
     }
 
     public static void InitPlayerPrefs()
