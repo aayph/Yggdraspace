@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4673520998638375270}
   - component: {fileID: 1733349783251384192}
   m_Layer: 0
-  m_Name: P_Spaceship
+  m_Name: P_Spaceship_Colonizier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   storage: {fileID: 0}
   EnergyConsumptionrate: 1
-  TravelSpeed: 2
+  TravelSpeed: 1
+  IsColonizeShip: 1
   closestPlanet: {fileID: 0}
   flySound: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
   landSound: {fileID: 8300000, guid: 1b6460d85722dbc418ff4e2842596bbb, type: 3}

@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
     public float EnergyConsumptionrate = 1;
     public float TravelSpeed = 1;
     public bool IsColonizeShip = false;
+    public bool IsYggdrasilShip = false;
 
     // For Traveling
     private bool IsTraveling;
@@ -91,6 +92,18 @@ public class Ship : MonoBehaviour
         {
             ResetTravelValues();
             EventManager.OpenTooExpensivePopUp();
+            return;
+        }
+        if (IsColonizeShip && GameRule.maxColonisationRange < distance)
+        {
+            ResetTravelValues();
+            //ToDo Pop Up EventManager.OpenTooExpensivePopUp();
+            return;
+        }
+        if (IsYggdrasilShip && GameRule.maxYggdrasilationRange < distance)
+        {
+            ResetTravelValues();
+            //ToDO Pop Up EventManager.OpenTooExpensivePopUp();
             return;
         }
         if (!GameRule.TravelIsContinous)
