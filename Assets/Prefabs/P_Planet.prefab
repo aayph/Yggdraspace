@@ -878,21 +878,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6717131564192979146}
     m_Modifications:
+    - target: {fileID: 968214677589087785, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
+      propertyPath: planet
+      value: 
+      objectReference: {fileID: -5958073753611407312}
     - target: {fileID: 5641499306878665551, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5641499306878665551, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.10000001
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5641499306878665551, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.10000001
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5641499306878665551, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.10000001
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5641499306878665551, guid: 343da37fc2757eb44bf4901bffe41c4d, type: 3}
       propertyPath: m_LocalPosition.x
