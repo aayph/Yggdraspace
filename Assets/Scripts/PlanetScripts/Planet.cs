@@ -35,14 +35,14 @@ public class Planet : MonoBehaviour
 
         EventManager.PlanetExploreAction += OnExplore;
         EventManager.PlanetColonizedAction += OnColonize;
-        EventManager.PlanetColonizedAction += OnYggdralized;
+        EventManager.PlanetYggdrasilationAction += OnYggdralized;
     }
 
     private void OnDestroy()
     {
         EventManager.PlanetExploreAction -= OnExplore;
         EventManager.PlanetColonizedAction -= OnColonize;
-        EventManager.PlanetColonizedAction -= OnYggdralized;
+        EventManager.PlanetYggdrasilationAction -= OnYggdralized;
     }
 
     private void Start()
@@ -53,6 +53,8 @@ public class Planet : MonoBehaviour
             EventManager.PlanetExploreEvent(this);
         if (isColonized)
             EventManager.PlanetColonizedEvent(this);
+        if (isYggdrasized)
+            reducer.endlessFood = true;
     }
 
     private void Update()
@@ -82,6 +84,7 @@ public class Planet : MonoBehaviour
     {
         if (planet != this) return;
         isYggdrasized = true;
+        reducer.endlessFood = true;
     }
 
     private void OnMouseDown()

@@ -10,6 +10,7 @@ public class RessourceReducer : MonoBehaviour
     Storage storage;
     public Resources reductionPerSecond;
     public float deadTimeOut = 0.5f;
+    public bool endlessFood = false;
 
     [HideInInspector] public List<Resources> transformer;
 
@@ -30,6 +31,9 @@ public class RessourceReducer : MonoBehaviour
 
         foreach (Resources r in transformer)
             TransformResources(r);
+
+        if (endlessFood)
+            storage.resources.organic = float.PositiveInfinity;
     }
 
     public bool IsDead()
