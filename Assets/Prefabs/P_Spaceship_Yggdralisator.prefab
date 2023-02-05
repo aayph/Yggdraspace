@@ -63,6 +63,7 @@ MonoBehaviour:
   TravelSpeed: 1
   IsColonizeShip: 0
   IsYggdrasilShip: 1
+  name: Spaceship
   closestPlanet: {fileID: 0}
   flySound: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
   landSound: {fileID: 8300000, guid: 1b6460d85722dbc418ff4e2842596bbb, type: 3}
@@ -77,7 +78,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75, z: 1}
+  m_Size: {x: 0.75, y: 5, z: 1}
   m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!114 &415280886198591791
 MonoBehaviour:
