@@ -18,7 +18,7 @@ public class RandomNameGenerator
 
     public static string RandomShipName()
     {
-        string[] names = {"Spaceship", "Explorer", "Tardis", "Entersprize", "Infinity", "Elysium", "Falcon", "Titanic", "Maryflower", "Destiny", "Victory", "Planet Express" };
+        string[] names = {"Spaceship", "Explorer", "Tardis", "Enterprize", "Infinity", "Elysium", "Falcon", "Titanic", "Maryflower", "Destiny", "Victory" };
         int num = (int)(Random.value * names.Length);
         return names[num];
     }
