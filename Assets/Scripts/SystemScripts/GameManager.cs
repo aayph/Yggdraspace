@@ -46,7 +46,6 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             LoadMainMenu();
-            blender.BlendIn(1f);
         }
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
