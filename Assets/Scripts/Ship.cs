@@ -4,9 +4,10 @@ public class Ship : MonoBehaviour
 {
     public Storage storage;
 
-    // Ship Statsa
+    // Ship Stats
     public float EnergyConsumptionrate = 1;
     public float TravelSpeed = 1;
+    public bool IsColonizeShip = false;
 
     // For Traveling
     private bool IsTraveling;
@@ -109,28 +110,59 @@ public class Ship : MonoBehaviour
 
     private void FinsishTravel()
     {
-        if (closestPlanet != null)
-        {
-            Storage planetStorage = closestPlanet.GetComponentInChildren<Storage>();
-            switch (GameRule.depletionDuringLanding)
-            {
-                case GameRule.DepletionOptions.All:
-                    storage.transferAllResources(planetStorage);
-                    break;
-                case GameRule.DepletionOptions.None:
-                    break;
-                case GameRule.DepletionOptions.AllButFuel:
-                    storage.transferMetal(planetStorage, storage.resources.metal);
-                    storage.transferOrganic(planetStorage, storage.resources.organic);
-                    break;
-            }            
-        }
-        ResetTravelValues();
+        // Finish Travel reset Values
         audioSource.loop = false;
         audioSource.Stop();
         audioSource.clip = landSound;
         audioSource.Play();
+
+        if (closestPlanet != null)
+        {
+            Planet planet = closestPlanet.GetComponent<Planet>();
+            if (planet.isColonized)
+            {
+                // Manage Storage
+                Storage planetStorage = closestPlanet.GetComponentInChildren<Storage>();
+                switch (GameRule.depletionDuringLanding)
+                {
+                    case GameRule.DepletionOptions.All:
+                        storage.transferAllResources(planetStorage);
+                        break;
+                    case GameRule.DepletionOptions.None:
+                        break;
+                    case GameRule.DepletionOptions.AllButFuel:
+                        storage.transferMetal(planetStorage, storage.resources.metal);
+                        storage.transferOrganic(planetStorage, storage.resources.organic);
+                        break;
+                }
+            }
+            else
+            {
+                // Send Event for exploration
+                if (!planet.isExplored)
+                {
+                    if (!GameRule.ColonizeShipsCanExplore && IsColonizeShip)
+                    {
+                        return;
+                    }
+                    EventManager.PlanetExploreEvent(planet);
+                }
+                if (IsColonizeShip)
+                {
+                    EventManager.PlanetColonizedEvent(planet);
+                    DestroyShip(true);
+                }
+            }
+
+        }
+
     }
+
+    private void DestroyShip(bool succefullColonization)
+    {
+        Destroy(gameObject);
+    }
+
 
     private void ResetTravelValues()
     {
