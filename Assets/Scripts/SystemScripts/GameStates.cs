@@ -13,6 +13,7 @@ public class GameStates
     public static Vector3 homePosition = Vector3.zero;
     public static Vector3 yggdrasilPosition = Vector3.one;
     public static float gameProgress = 0f;
+    public static float targetResources = 10000f;
 
     public static void Reset()
     {

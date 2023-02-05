@@ -8,7 +8,7 @@ public class HUD : MonoBehaviour
 {
     public TextMeshProUGUI gameTimeField;
     public TextMeshProUGUI remainingTime;
-    public ResourceOverview homePlanet;
+    public TextMeshProUGUI progressField;
     public ResourceOverview allPlanets;
 
     float timeAnimation = 0f;
@@ -36,7 +36,7 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
-        gameTimeField.text = String.Format("Played - {0:00}:{1:00}", Mathf.FloorToInt(GameStates.gameTime) / 60, Mathf.FloorToInt(GameStates.gameTime) % 60);
+        gameTimeField.text = String.Format("Played for {0:00}:{1:00}", Mathf.FloorToInt(GameStates.gameTime) / 60, Mathf.FloorToInt(GameStates.gameTime) % 60);
         AnimateTimer();
 
         Resources res = new Resources();
@@ -48,8 +48,9 @@ public class HUD : MonoBehaviour
     void UpdateRemainingTime(Planet planet, float time)
     {
         if (!planet.isHome) return;
-        remainingTime.text = String.Format("Time Left - {0:00}:{1:00}", Mathf.FloorToInt(time) / 60, Mathf.FloorToInt(time) % 60);
-        homePlanet.UpdateNumbers(planet.storage.resources);
+        remainingTime.text = String.Format("Food left for {0:00}:{1:00}", Mathf.FloorToInt(time) / 60, Mathf.FloorToInt(time) % 60);
+
+        progressField.text = String.Format("{0:0} / {1:0} ({2:0.00}%)", planet.storage.resources.organic, GameStates.targetResources, planet.storage.resources.organic / GameStates.targetResources);
     }
 
     void AddPlanet(Planet planet)
