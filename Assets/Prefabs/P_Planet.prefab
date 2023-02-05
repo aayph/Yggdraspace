@@ -127,14 +127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4f136d8a98fd6a44b155dbac17fade7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planetName: 
   constructionList: []
-  storage: {fileID: 0}
+  planetDescription: 
+  isHome: 0
   isExplored: 0
   isColonized: 0
   isYggdrasized: 0
   isDead: 0
+  storage: {fileID: 0}
+  reducer: {fileID: 0}
   structures: []
-  planetName: 
 --- !u!1001 &129773277659482175
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -589,6 +592,10 @@ PrefabInstance:
     - target: {fileID: 5651800281692082040, guid: 1a2dce99bba75244ba88fd7735bc3d04, type: 3}
       propertyPath: m_Name
       value: P_Art_Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651800281692082040, guid: 1a2dce99bba75244ba88fd7735bc3d04, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a2dce99bba75244ba88fd7735bc3d04, type: 3}
