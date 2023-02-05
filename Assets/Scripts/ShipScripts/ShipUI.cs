@@ -38,9 +38,10 @@ public class ShipUI : MonoBehaviour
     private void UpdateInterface()
     {
         Resources res = associatedShip.GetComponent<Ship>().storage.resources;
-        resourcesTexts[0].SetText("Brokolie " + (int)res.organic);
-        resourcesTexts[1].SetText("Water " + (int)res.water);
-        resourcesTexts[2].SetText("Metal " + (int)res.metal);
+        resourcesTexts[0].SetText("" + (int)res.organic);
+        resourcesTexts[1].SetText("" + (int)res.metal);
+        resourcesTexts[2].SetText("" + (int)res.water);
+        resourcesTexts[3].SetText(associatedShip.GetComponent<Ship>().name);
     }
 
     public void CloseUI()

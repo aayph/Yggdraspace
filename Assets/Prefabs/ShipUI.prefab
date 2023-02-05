@@ -2032,7 +2032,7 @@ GameObject:
   - component: {fileID: 430464116137261275}
   - component: {fileID: 430464116137261274}
   m_Layer: 5
-  m_Name: ShopUI
+  m_Name: ShipUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

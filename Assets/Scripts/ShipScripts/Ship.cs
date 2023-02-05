@@ -9,6 +9,7 @@ public class Ship : MonoBehaviour
     public float TravelSpeed = 1;
     public bool IsColonizeShip = false;
     public bool IsYggdrasilShip = false;
+    public string name = "Spaceship";
 
     // For Traveling
     private bool IsTraveling;
@@ -117,7 +118,6 @@ public class Ship : MonoBehaviour
             audioSource.loop = true;
             audioSource.Play();
         }
-
 
     }
 
