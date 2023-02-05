@@ -50,19 +50,19 @@ public class AudioManager : MonoBehaviour
 
         if (dangerLevel.Equals(0))
         {
-            StartCoroutine(FadeOutAudioSource(1, musicLayer2));
-            StartCoroutine(FadeInAudioSource(1, musicLayer1));
-            snapshotDanger1.TransitionTo(1);
+            StartCoroutine(FadeOutAudioSource(10, musicLayer2));
+            StartCoroutine(FadeInAudioSource(10, musicLayer1));
+            snapshotDanger1.TransitionTo(10);
         }
         else if (dangerLevel.Equals(1))
         {
-            StartCoroutine(FadeOutAudioSource(1, musicLayer1));
-            StartCoroutine(FadeInAudioSource(1, musicLayer2));
-            snapshotDanger2.TransitionTo(1);
+            StartCoroutine(FadeOutAudioSource(15, musicLayer1));
+            StartCoroutine(FadeInAudioSource(15, musicLayer2));
+            snapshotDanger2.TransitionTo(15);
         }
         else if (dangerLevel.Equals(2))
         {
-            snapshotDanger3.TransitionTo(1);
+            snapshotDanger3.TransitionTo(30);
         }
     }
     
