@@ -5,20 +5,18 @@ using UnityEngine;
 
 public class ShroudLifter : MonoBehaviour
 {
-    public GameObject Shroud;
-    public Vector3 scalechanger, wishedscale;
+    public Planet planet;
+    
    
     void Start()
     {
         EventManager events = GetComponent<EventManager>();
         EventManager.PlanetExploreAction += EventManager_PlanetExploreAction;
-        scalechanger = new Vector3(-.2f, -.2f, -.2f);
-        wishedscale = new Vector3(0, 0, 0);
     }
 
     private void EventManager_PlanetExploreAction(Planet obj)
     {
-        StartCoroutine(ReduceScale( 2f));
+        StartCoroutine(ReduceScale( 0f));
     }
    
     IEnumerator ReduceScale(float targetscaling)

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5641499306878665551}
+  - component: {fileID: 968214677589087785}
   m_Layer: 0
   m_Name: P_Art_PlanetShroud
   m_TagString: Untagged
@@ -32,6 +33,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &968214677589087785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5651800281692082040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6b0686807bc5145bd7595b58d12044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shroud: {fileID: 2849912716594054541, guid: 829e7a6e5cc6f2f4c840354c44e69b95, type: 3}
+  scalechanger: {x: 0, y: 0, z: 0}
+  wishedscale: {x: 0, y: 0, z: 0}
 --- !u!1001 &7840638367902258303
 PrefabInstance:
   m_ObjectHideFlags: 0
