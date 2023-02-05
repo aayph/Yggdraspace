@@ -1,11 +1,4 @@
-using JetBrains.Annotations;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
-using UnityEditor.SceneManagement;
-using UnityEngine;
-using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 
 [Serializable]
