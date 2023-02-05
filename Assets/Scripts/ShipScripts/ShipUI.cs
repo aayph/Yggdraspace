@@ -73,6 +73,10 @@ public class ShipUI : MonoBehaviour
         {
             return;
         }
+        if (!planet.GetComponent<Planet>().isColonized)
+        {
+            return;
+        }
 
         Storage transmitter;
         Storage reciever;
