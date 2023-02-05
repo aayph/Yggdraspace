@@ -39,7 +39,10 @@ public class Ship : MonoBehaviour
         {
             transform.Rotate(0, Vector3.Angle(travelDirection, transform.forward), 0, Space.Self);
             transform.position = transform.position + travelDirection * TravelSpeed * Time.deltaTime;
-            storage.resources.water -= EnergyConsumptionrate * Time.deltaTime;
+            if (GameRule.TravelIsContinous)
+            {
+                storage.resources.water -= EnergyConsumptionrate * Time.deltaTime;
+            }
             TravelTimer -= Time.deltaTime;
             if (TravelTimer <= 0)
             {
@@ -50,6 +53,10 @@ public class Ship : MonoBehaviour
 
     void OnMouseOver()
     {
+        if (!GameRule.TravelIsContinous && IsTraveling)
+        { 
+            return; 
+        }
         if (Input.GetMouseButtonDown(0) && !GameStates.isInTravelSelection)
         {
             EventManager.OnShipClickEvent(gameObject);
@@ -82,6 +89,11 @@ public class Ship : MonoBehaviour
             // TODO Pop Up Can't afford this journey
             ResetTravelValues();
             Debug.Log("Can't afford this journey");
+            return;
+        }
+        if (!GameRule.TravelIsContinous)
+        {
+            storage.resources.water -= TravelTimer * EnergyConsumptionrate;
         }
 
         // AUDIO
