@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1063013067}
-  m_IndirectSpecularColor: {r: 0.009440258, g: 0.028695608, b: 0.061134923, a: 1}
+  m_IndirectSpecularColor: {r: 0.009415112, g: 0.028690202, b: 0.061152756, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1782,7 +1782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477732456084, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.00012207031
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477806205553, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9311,6 +9311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Midgard
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 500
@@ -9333,7 +9337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979146, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979146, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_LocalPosition.z
