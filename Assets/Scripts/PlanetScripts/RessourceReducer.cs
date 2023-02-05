@@ -9,7 +9,12 @@ public class RessourceReducer : MonoBehaviour
 {
     Storage storage;
     public Resources reductionPerSecond;
-    public List<Resources> transformer;
+    public float deadTimeOut = 0.5f;
+    public bool endlessFood = false;
+
+    [HideInInspector] public List<Resources> transformer;
+
+    float deadTime = -1f;
 
     void Start()
     {
@@ -18,7 +23,7 @@ public class RessourceReducer : MonoBehaviour
 
     void Update()
     {
-        if (storage.resources.organic <= 0) return;
+        if (IsDead()) return;
 
         storage.resources.organic = Mathf.Max(0f, storage.resources.organic - reductionPerSecond.organic * Time.deltaTime);
         storage.resources.metal = Mathf.Max(0f, storage.resources.metal - reductionPerSecond.metal * Time.deltaTime);
@@ -26,6 +31,21 @@ public class RessourceReducer : MonoBehaviour
 
         foreach (Resources r in transformer)
             TransformResources(r);
+
+        if (endlessFood)
+            storage.resources.organic = float.PositiveInfinity;
+    }
+
+    public bool IsDead()
+    {
+        if (storage.resources.organic > 0f)
+        {
+            deadTime = -1f;
+            return false;
+        }
+        if (deadTime != -1f)
+            deadTime = GameStates.gameTime;
+        return (deadTime + deadTimeOut > GameStates.gameTime);
     }
 
     public float RemainingLifeTime()

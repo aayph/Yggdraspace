@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         audioManager = GetComponent<AudioManager>();
         InitPlayerPrefs();
+
+        EventManager.PlanetColonizedAction += OnPlanetColonized;
+        EventManager.PlanetYggdrasilationAction += OnPlanetYggralized;
     }
 
     public AudioManager GetAudioManager()
@@ -59,6 +62,35 @@ public class GameManager : MonoBehaviour
     {
         if (activeScene == ActiveScene.Game)
             GameStates.gameTime += Time.deltaTime;
+    }
+
+   void OnPlanetColonized(Planet planet)
+    {
+        if (planet.isHome) return;
+        if (GameStates.gameProgress >= 1f) return;
+
+        float newDistance = Vector3.Distance(planet.transform.position, GameStates.yggdrasilPosition);
+        float homeDistance = Vector3.Distance(GameStates.homePosition, GameStates.yggdrasilPosition);
+        float newProgress = 1f - newDistance / homeDistance;
+        if (GameStates.gameProgress < newProgress)
+        {
+            GameStates.gameProgress = newProgress;
+            EventManager.GameProgressUpdated(newProgress);
+        }
+    }
+
+    void OnPlanetYggralized(Planet planet)
+    {
+        if (!planet.isColonized && planet.isYggdrasized) return;
+
+        float newDistance = Vector3.Distance(planet.transform.position, GameStates.homePosition);
+        float homeDistance = Vector3.Distance(GameStates.homePosition, GameStates.yggdrasilPosition);
+        float newProgress = 2f - (newDistance / homeDistance);
+        if (GameStates.gameProgress < newProgress)
+        {
+            GameStates.gameProgress = newProgress;
+            EventManager.GameProgressUpdated(newProgress);
+        }
     }
 
     public static void LoadMainMenu()

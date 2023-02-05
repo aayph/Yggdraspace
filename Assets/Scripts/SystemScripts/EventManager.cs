@@ -104,6 +104,13 @@ public class EventManager
         PlanetExploreAction?.Invoke(planet);
     }
 
+
+    public static event Action<Planet, bool> PlanetDeadAction;
+    public static void PlanetDeadEvent(Planet planet, bool isDead)
+    {
+        PlanetDeadAction?.Invoke(planet, isDead);
+    }
+
     public static event Action<Planet> PlanetYggdrasilationAction;
     public static void PlanetYggdrasilationEvent(Planet planet)
     {
