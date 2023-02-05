@@ -28,6 +28,17 @@ public class RessourceReducer : MonoBehaviour
             TransformResources(r);
     }
 
+    public float RemainingLifeTime()
+    {
+        float reductionOverTime = reductionPerSecond.organic;
+        foreach (Resources r in transformer)
+            reductionOverTime -= r.organic;
+        float remainingTime = storage.resources.organic / reductionOverTime;
+        if (remainingTime < 0f)
+            return float.MaxValue;
+        return remainingTime;
+    }
+
     void TransformResources(Resources r)
     {
         Resources frameR = r * Time.deltaTime;

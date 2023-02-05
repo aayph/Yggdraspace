@@ -8,6 +8,6 @@ public static class GameRule
 
     public enum DepletionOptions { All, None, AllButFuel }
     public static DepletionOptions depletionDuringLanding = DepletionOptions.AllButFuel;
-
+    public static float[] DangerLevels = { 240, 120 };
 
 }

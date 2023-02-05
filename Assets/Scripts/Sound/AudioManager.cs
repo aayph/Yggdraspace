@@ -10,9 +10,9 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource musicSource1;
     
-    private void OnDangerLevelUpdate(int dangerLevel)
+    private void OnDangerLevelUpdate(Planet planet, int dangerLevel)
     {
-
+        if (planet == null || !planet.isHome) return;
     }
     
     private void OnGameProgressUpdate(float gameProgress)
