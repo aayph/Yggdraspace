@@ -10,7 +10,7 @@ public static class GameRule
     public static DepletionOptions depletionDuringLanding = DepletionOptions.AllButFuel;
     public static float[] DangerLevels = { 180, 90};
     public static bool ColonizeShipsCanExplore = false;
-    public static float maxColonisationRange = 20;
-    public static float maxYggdrasilationRange = 20;
+    public static float maxColonisationRange = 30;
+    public static float maxYggdrasilationRange = 30;
 
 }

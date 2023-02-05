@@ -64,6 +64,7 @@ public class Planet : MonoBehaviour
     private void Update()
     {
         bool newDeadState = reducer.IsDead();
+
         if (isDead != newDeadState)
         {
             isDead = newDeadState;
