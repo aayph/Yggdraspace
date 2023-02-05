@@ -193,7 +193,6 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: 81243616188fb8444a0dbf2179a76cd8, type: 3}
   newProgressUpdateSound: {fileID: 8300000, guid: f47cecb0b38b9c2468ecefab6f36e5ba, type: 3}
   BG_Music: {fileID: 8300000, guid: e8e864bbfe70edb4baa1bf0177e8c256, type: 3}
-  musicSource1: {fileID: 7458892957691046196}
   musicLayer1: {fileID: 7458892957691046196}
   musicLayer2: {fileID: 5772391060374164721}
   mixer: {fileID: 24100000, guid: 486d63aafb043a147abd30466490af3e, type: 2}
@@ -209,7 +208,7 @@ AudioSource:
   m_GameObject: {fileID: 4936113206606487552}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -733951083184559922, guid: 486d63aafb043a147abd30466490af3e, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
