@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,7 +13,10 @@ public class ResourceOverview : MonoBehaviour
 
     public void UpdateNumbers(Resources resources)
     {
-        organicNumberField.text = String.Format(numberFormat, resources.organic);
+        if (resources.organic == float.PositiveInfinity)
+            organicNumberField.text = "∞";
+        else
+            organicNumberField.text = String.Format(numberFormat, resources.organic);
         metalNumberField.text = String.Format(numberFormat, resources.metal);
         waterNumberField.text = String.Format(numberFormat, resources.water);
     }

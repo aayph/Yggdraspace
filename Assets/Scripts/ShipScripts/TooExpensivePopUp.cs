@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToExpensivePopUp : MonoBehaviour
+public class TooExpensivePopUp : MonoBehaviour
 {
     private float Timer=1.5f;
 

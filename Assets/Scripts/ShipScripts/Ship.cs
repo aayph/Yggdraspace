@@ -8,6 +8,7 @@ public class Ship : MonoBehaviour
     public float EnergyConsumptionrate = 1;
     public float TravelSpeed = 1;
     public bool IsColonizeShip = false;
+    public bool IsYggdrasilShip = false;
 
     // For Traveling
     private bool IsTraveling;
@@ -93,6 +94,18 @@ public class Ship : MonoBehaviour
             EventManager.OpenTooExpensivePopUp();
             return;
         }
+        if (IsColonizeShip && GameRule.maxColonisationRange < distance)
+        {
+            ResetTravelValues();
+            EventManager.OpenTooFarPopUp();
+            return;
+        }
+        if (IsYggdrasilShip && GameRule.maxYggdrasilationRange < distance)
+        {
+            ResetTravelValues();
+            EventManager.OpenTooFarPopUp();
+            return;
+        }
         if (!GameRule.TravelIsContinous)
         {
             storage.resources.water -= TravelTimer * EnergyConsumptionrate;
@@ -136,6 +149,12 @@ public class Ship : MonoBehaviour
                         storage.transferOrganic(planetStorage, storage.resources.organic);
                         break;
                 }
+                if (IsYggdrasilShip && !planet.isYggdrasized)
+                {
+                    storage.transferAllResources(planetStorage);
+                    EventManager.PlanetYggdrasilationEvent(planet);
+                    DestroyShip(true);
+                }
             }
             else
             {
@@ -150,6 +169,7 @@ public class Ship : MonoBehaviour
                 }
                 if (IsColonizeShip)
                 {
+                    storage.transferAllResources(closestPlanet.GetComponentInChildren<Storage>());
                     EventManager.PlanetColonizedEvent(planet);
                     DestroyShip(true);
                 }

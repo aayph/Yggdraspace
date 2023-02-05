@@ -10,6 +10,10 @@ public class GameStates
     public static bool isInTravelSelection = false;
     public static bool isPlanetMenuOpen = false;
     public static GameObject traveler = null;
+    public static Vector3 homePosition = Vector3.zero;
+    public static Vector3 yggdrasilPosition = Vector3.one;
+    public static float gameProgress = 0f;
+    public static float targetResources = 10000f;
 
     public static void Reset()
     {
@@ -18,5 +22,6 @@ public class GameStates
         isInTravelSelection = false;
         isPlanetMenuOpen = false;
         traveler = null;
+        gameProgress = 0f;
     }
 }

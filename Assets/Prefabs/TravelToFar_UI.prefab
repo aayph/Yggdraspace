@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1389200134675765209}
   - component: {fileID: 1389200134675765190}
   - component: {fileID: 1389200134675765191}
-  - component: {fileID: 1389200134675765211}
+  - component: {fileID: 416040406065772638}
   m_Layer: 5
-  m_Name: TravelToExpensive_UI
+  m_Name: TravelToFar_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1389200134675765211
+--- !u!114 &416040406065772638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,7 +112,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1389200134675765188}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b2ab8a0c494284fac9f26d72d7b5cb, type: 3}
+  m_Script: {fileID: 11500000, guid: d7657fe750ea9144f86e888fadf7ea85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1389200135110250611
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: There is not enough fuel on this ship for the selected Travel!
+  m_text: The selected Travel Goal is to far away!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
