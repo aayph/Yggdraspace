@@ -47,11 +47,11 @@ public class GameEndScreen : MonoBehaviour
         if (playerWon)
         {
             stateMessage.text = "~* YOU WON! *~";
-            continueButton.interactable = true;
+            continueButton.gameObject.SetActive(true);
         } else
         {
             stateMessage.text = "💀 Game Over 💀";
-            continueButton.interactable = false;
+            continueButton.gameObject.SetActive(false);
         }
 
         Time.timeScale = 0;
