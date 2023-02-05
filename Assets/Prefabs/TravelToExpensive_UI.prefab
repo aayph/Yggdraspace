@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1389200134675765191}
   - component: {fileID: 1389200134675765211}
   m_Layer: 5
-  m_Name: TravelToExpensive_UI 1
+  m_Name: TravelToExpensive_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
