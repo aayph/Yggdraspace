@@ -43,9 +43,9 @@ public class RessourceReducer : MonoBehaviour
             deadTime = -1f;
             return false;
         }
-        if (deadTime != -1f)
+        if (deadTime == -1f)
             deadTime = GameStates.gameTime;
-        return (deadTime + deadTimeOut > GameStates.gameTime);
+        return (deadTime + deadTimeOut < GameStates.gameTime);
     }
 
     public float RemainingLifeTime()

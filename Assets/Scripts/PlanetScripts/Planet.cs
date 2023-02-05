@@ -24,6 +24,10 @@ public class Planet : MonoBehaviour
     public RessourceReducer reducer;
     public List<PlanetStructure> structures;
 
+    [Space]
+    public GameObject deadObject;
+    public GameObject settledObject;
+
     int currentDangerLevel = 0;
 
     private void Awake()
@@ -60,10 +64,13 @@ public class Planet : MonoBehaviour
     private void Update()
     {
         bool newDeadState = reducer.IsDead();
+
         if (isDead != newDeadState)
         {
             isDead = newDeadState;
             EventManager.PlanetDeadEvent(this, newDeadState);
+            if (deadObject != null)
+                deadObject.SetActive(isDead);
         }
         EventManager.RemainingLifetimeEvent(this, CheckDangerLevel());
     }
@@ -78,6 +85,8 @@ public class Planet : MonoBehaviour
     {
         if (planet != this) return;
         isColonized = true;
+        if (settledObject != null)
+            settledObject.SetActive(true);
     }
 
     private void OnYggdralized(Planet planet)
