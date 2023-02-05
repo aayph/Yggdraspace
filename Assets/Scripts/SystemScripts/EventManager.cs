@@ -30,6 +30,12 @@ public class EventManager
         ShipTravelTooExpensive?.Invoke();
     }
 
+    public static event Action ShipTravelTooFar;
+    public static void OpenTooFarPopUp()
+    {
+        ShipTravelTooFar?.Invoke();
+    }
+
 
 
     public static event Action<Planet> PlanetAction;

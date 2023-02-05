@@ -97,13 +97,13 @@ public class Ship : MonoBehaviour
         if (IsColonizeShip && GameRule.maxColonisationRange < distance)
         {
             ResetTravelValues();
-            //ToDo Pop Up EventManager.OpenTooExpensivePopUp();
+            EventManager.OpenTooFarPopUp();
             return;
         }
         if (IsYggdrasilShip && GameRule.maxYggdrasilationRange < distance)
         {
             ResetTravelValues();
-            //ToDO Pop Up EventManager.OpenTooExpensivePopUp();
+            EventManager.OpenTooFarPopUp();
             return;
         }
         if (!GameRule.TravelIsContinous)
