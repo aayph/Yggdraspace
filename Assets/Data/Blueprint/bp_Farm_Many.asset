@@ -23,11 +23,11 @@ MonoBehaviour:
     Second:'
   prefab: {fileID: 0}
   costs:
-    organic: 10
-    metal: 0
-    water: 20
+    organic: 0
+    metal: 20
+    water: 50
   constructionTime: 0
   perSecondChange:
-    organic: 0.2
+    organic: 0.6
     metal: 0
     water: -0.1

@@ -27,6 +27,7 @@ public class Ship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        name = RandomNameGenerator.GetShipName();
         storage = gameObject.GetComponentInChildren<Storage>();
         EventManager.ShipTravelAction += TravelToTarget;
         audioSource = GetComponent<AudioSource>();

@@ -10,16 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9bd5c1949ef845418eed5cdf7abf45d, type: 3}
-  m_Name: bp_BasicShip
+  m_Name: bp_ColonizationShip
   m_EditorClassIdentifier: 
   isBuilding: 0
   planetLimit: 0
-  identifier: Transport Ship
+  identifier: Colonizer
   requiredStructure: Hangar
-  description: Ship to transport stuff.
-  prefab: {fileID: 415280886198591790, guid: 77a63b97a3ca41c44bf72e9435cb53b2, type: 3}
+  description: With ship it is possible to colonize new planets, making their resources
+    available.
+  prefab: {fileID: 415280886198591790, guid: 7593866c66523ab4a87eb2244ca0f70c, type: 3}
   costs:
-    organic: 0
-    metal: 30
-    water: 10
+    organic: 200
+    metal: 200
+    water: 50
   constructionTime: 0
+  perSecondChange:
+    organic: 0
+    metal: 0
+    water: 0

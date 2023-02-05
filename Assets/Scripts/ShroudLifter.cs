@@ -10,7 +10,6 @@ public class ShroudLifter : MonoBehaviour
    
     void Start()
     {
-        EventManager events = GetComponent<EventManager>();
         EventManager.PlanetExploreAction += EventManager_PlanetExploreAction;
     }
 
