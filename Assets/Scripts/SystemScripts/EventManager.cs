@@ -103,4 +103,10 @@ public class EventManager
     {
         PlanetExploreAction?.Invoke(planet);
     }
+
+    public static event Action<Planet> PlanetYggdrasilationAction;
+    public static void PlanetYggdrasilationEvent(Planet planet)
+    {
+        PlanetExploreAction?.Invoke(planet);
+    }
 }
