@@ -24,11 +24,13 @@ public class SoundSettings : MonoBehaviour
     {
         PlayerPrefs.SetFloat("music_volume", value);
         PlayerPrefs.Save();
+        EventManager.PlayerPrefsUpdated("music_volume");
     }
 
     public void UpdateSound(float value)
     {
         PlayerPrefs.SetFloat("sound_volume", value);
         PlayerPrefs.Save();
+        EventManager.PlayerPrefsUpdated("sound_volume");
     }
 }

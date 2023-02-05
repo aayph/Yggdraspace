@@ -7960,11 +7960,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5371010040649253285, guid: 0a350f84281c114459f3dc1df80ca5cf, type: 3}
       propertyPath: m_Alpha
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5371010040649253288, guid: 0a350f84281c114459f3dc1df80ca5cf, type: 3}
       propertyPath: m_Name
       value: PauseMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5371010040775421310, guid: 0a350f84281c114459f3dc1df80ca5cf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5371010040848224239, guid: 0a350f84281c114459f3dc1df80ca5cf, type: 3}
       propertyPath: m_AnchorMax.x
@@ -10054,6 +10058,28 @@ PrefabInstance:
     - target: {fileID: 2565946468340297621, guid: 70e34fe278c2f6f448fd9ab2c290fd95, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2565946468920462341, guid: 70e34fe278c2f6f448fd9ab2c290fd95, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Thanks for playing our little Jam Game. Created in 48h during
+        the Global Game Jam from following people:
+
+
+        Alexander Frey
+
+        Fynn
+        Rieger
+
+        Mara Mehlitz
+
+        Stefan Gerstner
+
+        Vanessa Freyberg
+
+        Willi
+        Schorrig'
       objectReference: {fileID: 0}
     - target: {fileID: 2565946468920462362, guid: 70e34fe278c2f6f448fd9ab2c290fd95, type: 3}
       propertyPath: m_SizeDelta.x

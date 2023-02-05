@@ -9,7 +9,7 @@ public class Ship : MonoBehaviour
     public float TravelSpeed = 1;
     public bool IsColonizeShip = false;
     public bool IsYggdrasilShip = false;
-    public string name = "Spaceship";
+    public string shipName = "Spaceship";
 
     // For Traveling
     private bool IsTraveling = false;
@@ -27,7 +27,7 @@ public class Ship : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        name = RandomNameGenerator.GetShipName();
+        shipName = RandomNameGenerator.GetShipName();
         storage = gameObject.GetComponentInChildren<Storage>();
         EventManager.ShipTravelAction += TravelToTarget;
         audioSource = GetComponent<AudioSource>();

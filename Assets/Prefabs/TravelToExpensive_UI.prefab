@@ -259,8 +259,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: There is not enough fuel on this ship for the selected Travel!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 980d39944cee4ed4b96c4b589a110bd1, type: 2}
+  m_sharedMaterial: {fileID: -787854797856228739, guid: 980d39944cee4ed4b96c4b589a110bd1, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

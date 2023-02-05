@@ -41,7 +41,7 @@ public class ShipUI : MonoBehaviour
         resourcesTexts[0].SetText("" + (int)res.organic);
         resourcesTexts[1].SetText("" + (int)res.metal);
         resourcesTexts[2].SetText("" + (int)res.water);
-        resourcesTexts[3].SetText(associatedShip.GetComponent<Ship>().name);
+        resourcesTexts[3].SetText(associatedShip.GetComponent<Ship>().shipName);
     }
 
     public void CloseUI()

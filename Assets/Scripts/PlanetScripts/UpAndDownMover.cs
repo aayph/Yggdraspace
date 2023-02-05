@@ -20,9 +20,9 @@ public class UpAndDownMover : MonoBehaviour
     void Update()
     {
         progressTime += Time.deltaTime / animationSpeed;
-        if (progressTime > 3.14f) progressTime -= 3.14f;
+        if (progressTime > 6.28f) progressTime -= 6.28f;
 
-        transform.position = new Vector3(transform.position.x, (Mathf.Lerp(startposition, difference, Mathf.Sin(progressTime))), transform.position.z);
+        transform.position = new Vector3(transform.position.x, (Mathf.Lerp(startposition, difference, (Mathf.Sin(progressTime)+1f)/2 )), transform.position.z);
 
     }
 }
