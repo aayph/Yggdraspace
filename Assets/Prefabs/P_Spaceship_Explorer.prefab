@@ -61,6 +61,8 @@ MonoBehaviour:
   storage: {fileID: 0}
   EnergyConsumptionrate: 1
   TravelSpeed: 2
+  IsColonizeShip: 0
+  IsYggdrasilShip: 0
   closestPlanet: {fileID: 0}
   flySound: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
   landSound: {fileID: 8300000, guid: 1b6460d85722dbc418ff4e2842596bbb, type: 3}
@@ -226,7 +228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8591965360086743169, guid: 3037f37ab2ad9a6449c312e13e32afd0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.46
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8591965360086743169, guid: 3037f37ab2ad9a6449c312e13e32afd0, type: 3}
       propertyPath: m_LocalPosition.z
