@@ -9,11 +9,12 @@ public class ResourceOverview : MonoBehaviour
     public TextMeshProUGUI organicNumberField;
     public TextMeshProUGUI metalNumberField;
     public TextMeshProUGUI waterNumberField;
+    public string numberFormat = "{0:0.0}";
 
     public void UpdateNumbers(Resources resources)
     {
-        organicNumberField.text = String.Format("{0:0.0}", resources.organic);
-        metalNumberField.text = String.Format("{0:0.0}", resources.metal);
-        waterNumberField.text = String.Format("{0:0.0}", resources.water);
+        organicNumberField.text = String.Format(numberFormat, resources.organic);
+        metalNumberField.text = String.Format(numberFormat, resources.metal);
+        waterNumberField.text = String.Format(numberFormat, resources.water);
     }
 }

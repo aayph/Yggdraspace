@@ -30,6 +30,10 @@ public class Planet : MonoBehaviour
     {
         storage = GetComponent<Storage>();
         reducer = GetComponent<RessourceReducer>();
+        if (isExplored)
+            EventManager.PlanetExploreEvent(this);
+        if (isColonized)
+            EventManager.PlanetColonizedEvent(this);
     }
 
     private void Update()

@@ -37,7 +37,22 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
             LoadMainMenu();
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            activeScene = ActiveScene.MainMenu;
+            EventManager.SceneChanged(ActiveScene.MainMenu);
+            EventManager.GameProgressUpdated(0f);
+        }
+        else
+        {
+            GameStates.Reset();
+            activeScene = ActiveScene.Game;
+            EventManager.SceneChanged(ActiveScene.Game);
+            EventManager.GameProgressUpdated(0f);
+        }
     }
 
     private void Update()

@@ -89,4 +89,18 @@ public class EventManager
     {
         RemainingLifetimeAction?.Invoke(planet, remainingTime);
     }
+
+
+    public static event Action<Planet> PlanetColonizedAction;
+    public static void PlanetColonizedEvent(Planet planet)
+    {
+        PlanetColonizedAction?.Invoke(planet);
+    }
+
+
+    public static event Action<Planet> PlanetExploreAction;
+    public static void PlanetExploreEvent(Planet planet)
+    {
+        PlanetExploreAction?.Invoke(planet);
+    }
 }
