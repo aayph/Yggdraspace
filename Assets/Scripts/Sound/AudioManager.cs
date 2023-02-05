@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,16 +10,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip BG_Music;
     private AudioSource audioSource;
 
-    public AudioSource musicSource1;
-    public AudioSource baseTrack;
     public AudioSource musicLayer1;
     public AudioSource musicLayer2;
-    public AudioSource musicLayer3;
-    public AudioSource musicLayer4;
-    public AudioSource musicLayerVariations;
+
 
     private int currentProgressState = 0;
 
+    public AudioMixer mixer;
+    public AudioMixerSnapshot snapshotDanger1;
+    public AudioMixerSnapshot snapshotDanger2;
+    public AudioMixerSnapshot snapshotDanger3;
 
     private IEnumerator FadeInAudioSource(float fadeTime, AudioSource source)
     {
@@ -46,26 +47,47 @@ public class AudioManager : MonoBehaviour
     private void OnDangerLevelUpdate(Planet planet, int dangerLevel)
     {
         if (planet == null || !planet.isHome) return;
+
+        if (dangerLevel.Equals(0))
+        {
+            StartCoroutine(FadeOutAudioSource(1, musicLayer2));
+            StartCoroutine(FadeInAudioSource(1, musicLayer1));
+            snapshotDanger1.TransitionTo(1);
+        }
+        else if (dangerLevel.Equals(1))
+        {
+            StartCoroutine(FadeOutAudioSource(1, musicLayer1));
+            StartCoroutine(FadeInAudioSource(1, musicLayer2));
+            snapshotDanger2.TransitionTo(1);
+        }
+        else if (dangerLevel.Equals(2))
+        {
+            snapshotDanger3.TransitionTo(1);
+        }
     }
     
     private void OnGameProgressUpdate(float gameProgress)
     {
-        if (gameProgress > 0.2f && currentProgressState.Equals(0))
+        /*
+        if (gameProgress > 0.25f && currentProgressState.Equals(0))
         {
             currentProgressState = 1;
+            StartCoroutine(FadeOutAudioSource(  1,    musicLayer1));
+            StartCoroutine(FadeInAudioSource(   1,    musicLayer2));
         }
-        else if (gameProgress > 0.4f && currentProgressState.Equals(1))
+        else if (gameProgress > 0.5f && currentProgressState.Equals(1))
         {
             currentProgressState = 2;
+            StartCoroutine(FadeOutAudioSource(1, musicLayer2));
+            StartCoroutine(FadeInAudioSource(1, musicLayer3));
         }
-        else if (gameProgress > 0.6f && currentProgressState.Equals(2))
+        else if (gameProgress > 0.75f && currentProgressState.Equals(2))
         {
             currentProgressState = 3;
+            StartCoroutine(FadeOutAudioSource(1, musicLayer3));
+            StartCoroutine(FadeInAudioSource(1, musicLayer4));
         }
-        else if (gameProgress > 0.8f && currentProgressState.Equals(3))
-        {
-            currentProgressState = 4;
-        }
+  */
     }
 
     private void OnShipClicked(GameObject ship)
@@ -88,17 +110,25 @@ public class AudioManager : MonoBehaviour
 
     public void PlayBackgroundMusic()
     {
-        musicSource1.Play();
+       //musicSource1.Play();
     }
 
     public void StopBackgroundMusic()
     {
-        musicSource1.Play();
+       // musicSource1.Play();
     }
 
     private void ShipStartedTraveling(Vector3 destination)
     {
         // PLAY START SOUND
+    }
+
+    private void DiscoverPlanet(Planet planet)
+    {
+        audioSource.clip = newProgressUpdateSound;
+        audioSource.volume = 1;// Random.Range(0.8f, 1);
+        audioSource.pitch = 1;// Random.Range(0.9f, 1.1f);
+        audioSource.Play();
     }
 
     // Start is called before the first frame update
@@ -111,6 +141,7 @@ public class AudioManager : MonoBehaviour
         EventManager.GameProgressUpdate += OnGameProgressUpdate;
         EventManager.DangerLevelUpdate += OnDangerLevelUpdate;
         EventManager.ShipTravelAction += ShipStartedTraveling;
+        EventManager.PlanetExploreAction += DiscoverPlanet;
     }
 
     private void OnDestroy()
@@ -119,6 +150,8 @@ public class AudioManager : MonoBehaviour
         EventManager.PlanetAction -= OnPlanetClicked;
         EventManager.GameProgressUpdate -= OnGameProgressUpdate;
         EventManager.DangerLevelUpdate -= OnDangerLevelUpdate;
+        EventManager.ShipTravelAction -= ShipStartedTraveling;
+        EventManager.PlanetExploreAction -= DiscoverPlanet;
     }
 
     // Update is called once per frame
