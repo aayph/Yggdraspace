@@ -86,9 +86,8 @@ public class Ship : MonoBehaviour
         // Do not travel if it would cost more energy then stored
         if (TravelTimer * EnergyConsumptionrate > storage.resources.water)
         {
-            // TODO Pop Up Can't afford this journey
             ResetTravelValues();
-            Debug.Log("Can't afford this journey");
+            EventManager.OpenTooExpensivePopUp();
             return;
         }
         if (!GameRule.TravelIsContinous)

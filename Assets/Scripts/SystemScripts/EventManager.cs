@@ -24,6 +24,12 @@ public class EventManager
         ShipTravelAction?.Invoke(target);
     }
 
+    public static event Action ShipTravelTooExpensive;
+    public static void OpenTooExpensivePopUp()
+    {
+        ShipTravelTooExpensive?.Invoke();
+    }
+
 
 
     public static event Action<Planet> PlanetAction;
