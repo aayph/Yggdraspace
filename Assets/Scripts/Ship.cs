@@ -115,6 +115,7 @@ public class Ship : MonoBehaviour
         audioSource.Stop();
         audioSource.clip = landSound;
         audioSource.Play();
+        ResetTravelValues();
 
         if (closestPlanet != null)
         {
