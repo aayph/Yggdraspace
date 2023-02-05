@@ -44,6 +44,7 @@ public class Tooltip : MonoBehaviour
             canvasGroup.alpha = 0f;
             return;
         }
+        if (res == null) res = new Resources();
 
         titleField.text = title;
         textField.text = text;

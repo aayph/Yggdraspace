@@ -219,9 +219,17 @@ PrefabInstance:
       propertyPath: planetName
       value: Planet 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isColonized
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: P_Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: resources.organic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979146, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_RootOrder
@@ -389,6 +397,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7942595477157805576, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942595477157805576, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7942595477530609294, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -499,6 +515,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477806205553, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942595478089718200, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942595478089718200, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7942595478089718200, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5603,6 +5631,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isExplored
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: planetName
       value: Planet 5
       objectReference: {fileID: 0}
@@ -6147,8 +6179,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isExplored
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: planetName
       value: Planet 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isColonized
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: constructionList.Array.size
@@ -6806,8 +6846,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isExplored
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: planetName
-      value: Planet 7
+      value: Midgard (Home)
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isColonized
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: constructionList.Array.size
@@ -6960,10 +7008,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1186974277580227741, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1186974277580227741, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -7084,10 +7128,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1186974278607639061, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 1186974278607639061, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
@@ -7119,10 +7159,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1186974279389303125, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
-      propertyPath: m_ChildControlWidth
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1186974279466649811, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -7130,10 +7166,6 @@ PrefabInstance:
     - target: {fileID: 1186974279466649811, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
       propertyPath: m_AnchorMin.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1186974279466649811, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 1186974279466649811, guid: 577e225b8e67d1f40a9c93ddfbc4e57b, type: 3}
       propertyPath: m_SizeDelta.y
