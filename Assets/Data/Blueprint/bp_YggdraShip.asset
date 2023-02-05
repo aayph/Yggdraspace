@@ -10,24 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9bd5c1949ef845418eed5cdf7abf45d, type: 3}
-  m_Name: bp_Mine_Many
+  m_Name: bp_YggdraShip
   m_EditorClassIdentifier: 
-  isBuilding: 1
-  planetLimit: 5
-  identifier: Mine
+  isBuilding: 0
+  planetLimit: 0
+  identifier: Yggdralisator
   requiredStructure: 
-  description: 'Turn manual labor that needs to be feed into real Viking metal!
-
-
-    per
-    Second:'
-  prefab: {fileID: 0}
+  description: This mystic ship can connected the roots of Yggdrasil to one of our
+    planets near Yggdrasil's roots.
+  prefab: {fileID: 415280886198591790, guid: bc336f51d45ee1849aa79b45200725d3, type: 3}
   costs:
-    organic: 30
-    metal: 50
-    water: 0
+    organic: 10000
+    metal: 1000
+    water: 1000
   constructionTime: 0
   perSecondChange:
-    organic: -0.2
-    metal: 0.6
+    organic: 0
+    metal: 0
     water: 0
