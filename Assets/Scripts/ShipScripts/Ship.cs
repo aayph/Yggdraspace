@@ -149,6 +149,12 @@ public class Ship : MonoBehaviour
                         storage.transferOrganic(planetStorage, storage.resources.organic);
                         break;
                 }
+                if (IsYggdrasilShip && !planet.isYggdrasized)
+                {
+                    storage.transferAllResources(planetStorage);
+                    EventManager.PlanetYggdrasilationEvent(planet);
+                    DestroyShip(true);
+                }
             }
             else
             {
@@ -163,6 +169,7 @@ public class Ship : MonoBehaviour
                 }
                 if (IsColonizeShip)
                 {
+                    storage.transferAllResources(closestPlanet.GetComponentInChildren<Storage>());
                     EventManager.PlanetColonizedEvent(planet);
                     DestroyShip(true);
                 }

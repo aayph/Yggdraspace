@@ -62,7 +62,7 @@ MonoBehaviour:
   EnergyConsumptionrate: 0.5
   TravelSpeed: 1
   IsColonizeShip: 0
-  IsYggdrasilShip: 0
+  IsYggdrasilShip: 1
   closestPlanet: {fileID: 0}
   flySound: {fileID: 8300000, guid: 79815aca52ba66040b186046f6a3011b, type: 3}
   landSound: {fileID: 8300000, guid: 1b6460d85722dbc418ff4e2842596bbb, type: 3}
