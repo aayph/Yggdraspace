@@ -104,9 +104,19 @@ public class Ship : MonoBehaviour
     {
         if (closestPlanet != null)
         {
-            // WIP
             Storage planetStorage = closestPlanet.GetComponentInChildren<Storage>();
-            storage.transferAllResources(planetStorage);
+            switch (GameRule.depletionDuringLanding)
+            {
+                case GameRule.DepletionOptions.All:
+                    storage.transferAllResources(planetStorage);
+                    break;
+                case GameRule.DepletionOptions.None:
+                    break;
+                case GameRule.DepletionOptions.AllButFuel:
+                    storage.transferMetal(planetStorage, storage.resources.metal);
+                    storage.transferOrganic(planetStorage, storage.resources.organic);
+                    break;
+            }            
         }
         ResetTravelValues();
         audioSource.loop = false;
