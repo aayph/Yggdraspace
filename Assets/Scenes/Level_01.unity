@@ -210,6 +210,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wet Farm Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 100
@@ -418,6 +422,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6338004228434219664, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_text
+      value: Entersprize 012
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
 --- !u!1001 &159155424
@@ -615,6 +623,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Farm Planet (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 100
@@ -776,6 +788,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Heavy Industries Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -954,6 +970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ocean Planet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 300
@@ -1107,6 +1127,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Ocean Planet (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -1359,6 +1383,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Treasure Planet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 2000
@@ -1535,6 +1563,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Ocean Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -1782,7 +1814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477732456084, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477806205553, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1931,6 +1963,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Normal Farm Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -2084,6 +2120,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Water Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -2243,6 +2283,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Dying Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -2411,6 +2455,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5574928336149549770, guid: 05b0aa6b57e380942a5c1649b2f4d080, type: 3}
   m_PrefabInstance: {fileID: 1595450897}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &849485940
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849485934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4.2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &849485941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849485934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d5743644570a1446a0aa56f2340286c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &880859446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2501,6 +2570,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Water Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -7663,6 +7736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dying Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 5000
@@ -8164,6 +8241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Normal Farm Planet (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 100
@@ -8363,6 +8444,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Treasure Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -8571,6 +8656,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Big Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -8940,6 +9029,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Mining Planet
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
@@ -9317,6 +9410,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
       value: 500
@@ -9550,6 +9647,10 @@ PrefabInstance:
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Mining Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6717131564192979143, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979144, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: resources.metal
