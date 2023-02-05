@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1063013067}
-  m_IndirectSpecularColor: {r: 0.009415112, g: 0.028690202, b: 0.061152756, a: 1}
+  m_IndirectSpecularColor: {r: 0.009440258, g: 0.028695608, b: 0.061134923, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -393,6 +393,30 @@ PrefabInstance:
     - target: {fileID: 430464116137261273, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
       propertyPath: m_Name
       value: ShipUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 380
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -40
+      objectReference: {fileID: 0}
+    - target: {fileID: 430464117266863118, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 622d5c3cd98f6bb41a682a08c33a6b21, type: 3}
@@ -1758,7 +1782,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477732456084, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.00012207031
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7942595477806205553, guid: 4ce640be34fa1fb49b81cd97524eb311, type: 3}
       propertyPath: m_AnchorMax.y
@@ -9279,6 +9303,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5677497179523531331, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979142, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_Name
       value: Midgard
@@ -9305,7 +9333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979146, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6717131564192979146, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9342,6 +9370,10 @@ PrefabInstance:
     - target: {fileID: 7376373568015289163, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7493648696697096484, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
