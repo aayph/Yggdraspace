@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -10,8 +11,10 @@ public class PlanetInterface : MonoBehaviour
     CanvasGroup canvasGroup;
     Planet selectedPlanet;
     public TextMeshProUGUI nameField;
-    public ConstructionItem[] constructionItems;
     public ResourceOverview resourceOverview;
+    public Transform constructionItemContainer;
+    public GameObject constructionItemPrefab;
+    List<ConstructionItem> constructionItems;
 
     private void Awake()
     {
@@ -43,6 +46,28 @@ public class PlanetInterface : MonoBehaviour
         selectedPlanet = planet;
         nameField.text = selectedPlanet.planetName;
         resourceOverview.UpdateNumbers(selectedPlanet.storage.resources);
+        SetConstructionList();
+    }
+
+    void SetConstructionList()
+    {
+        if (constructionItems != null)
+            foreach (ConstructionItem constructionItem in constructionItems)
+                Destroy(constructionItem.gameObject);
+        constructionItems = new List<ConstructionItem>();
+
+        float count = 0;
+        foreach (Blueprint blueprint in selectedPlanet.constructionList)
+        {
+            ConstructionItem item = Instantiate(constructionItemPrefab).GetComponent<ConstructionItem>();
+            item.transform.SetParent(constructionItemContainer, false);
+            item.transform.localPosition += Vector3.down * count * 100;
+            item.planetUI = this;
+            item.SetData(blueprint);
+            item.UpdateStates(selectedPlanet);
+            constructionItems.Add(item);
+            count++;
+        }
     }
 
     public void AcivateMenu()
@@ -64,5 +89,7 @@ public class PlanetInterface : MonoBehaviour
     public void Construct(Blueprint blueprint)
     {
         selectedPlanet.Construct(blueprint);
+        foreach (ConstructionItem constructionItem in constructionItems)
+            constructionItem.UpdateStates(selectedPlanet);
     }
 }

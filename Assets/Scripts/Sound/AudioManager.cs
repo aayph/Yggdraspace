@@ -40,7 +40,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    private void OnDangerLevelUpdate(float dangerLevel)
+
+    private void OnDangerLevelUpdate(int dangerLevel)
     {
 
     }
