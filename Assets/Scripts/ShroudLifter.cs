@@ -12,6 +12,7 @@ public class ShroudLifter : MonoBehaviour
         if (planet.isExplored)
         {
             transform.localScale = Vector3.zero;
+            gameObject.SetActive(false);
             return;
         }
         EventManager.PlanetExploreAction += EventManager_PlanetExploreAction;
@@ -30,11 +31,12 @@ public class ShroudLifter : MonoBehaviour
    
     IEnumerator ReduceScale(float targetscaling)
     {
-        float reducingrate = 0.2f;
+        float reducingrate = 0.75f;
         while (targetscaling < transform.localScale.x)
         {
             transform.localScale -= reducingrate * Time.deltaTime * Vector3.one;
             yield return null;
         }
+        gameObject.SetActive(false);
     }
 }
