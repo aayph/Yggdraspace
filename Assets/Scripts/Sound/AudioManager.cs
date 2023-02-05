@@ -125,6 +125,7 @@ public class AudioManager : MonoBehaviour
 
     private void DiscoverPlanet(Planet planet)
     {
+        if (GameStates.gameTime <= 1f) return;
         audioSource.clip = newProgressUpdateSound;
         audioSource.volume = 1;// Random.Range(0.8f, 1);
         audioSource.pitch = 1;// Random.Range(0.9f, 1.1f);
