@@ -56,10 +56,10 @@ public class EventManager
 
 
     //0 - 2
-    public static event Action<int> DangerLevelUpdate;
-    public static void DangerLevelUpdated(int dangerLevel)
+    public static event Action<Planet, int> DangerLevelUpdate;
+    public static void DangerLevelUpdated(Planet planet, int dangerLevel)
     {
-        DangerLevelUpdate?.Invoke(dangerLevel);
+        DangerLevelUpdate?.Invoke(planet, dangerLevel);
     }
 
 
@@ -81,5 +81,12 @@ public class EventManager
     public static void TooltipEvent(string title, string content, Resources res)
     {
         TooltipAction?.Invoke(title, content, res);
+    }
+
+
+    public static event Action<Planet, float> RemainingLifetimeAction;
+    public static void RemainingLifetimeEvent(Planet planet, float remainingTime)
+    {
+        RemainingLifetimeAction?.Invoke(planet, remainingTime);
     }
 }

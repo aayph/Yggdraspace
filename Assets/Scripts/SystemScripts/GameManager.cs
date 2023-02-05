@@ -52,7 +52,6 @@ public class GameManager : MonoBehaviour
         activeScene = ActiveScene.MainMenu;
         EventManager.SceneChanged(ActiveScene.MainMenu);
         EventManager.GameProgressUpdated(0f);
-        EventManager.DangerLevelUpdated(0);
     }
 
     public static void StartNewGame()
@@ -62,7 +61,6 @@ public class GameManager : MonoBehaviour
         activeScene = ActiveScene.Game;
         EventManager.SceneChanged(ActiveScene.Game);
         EventManager.GameProgressUpdated(0f);
-        EventManager.DangerLevelUpdated(0);
     }
 
     public static void InitPlayerPrefs()

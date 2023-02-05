@@ -6,17 +6,25 @@ using UnityEngine;
 [RequireComponent(typeof(Storage), typeof(RessourceReducer))]
 public class Planet : MonoBehaviour
 {
+    public string planetName;
     public Blueprint[] constructionList;
-    public Storage storage;
+    [TextArea] public string planetDescription;
+
+    [Space]
+    [Header ("States")]
+    public bool isHome = false;
     public bool isExplored = false;
     public bool isColonized = false;
     public bool isYggdrasized = false;
     public bool isDead = false;
-    RessourceReducer reducer;
 
+    [Space]
+    [Header ("Components & Data | Automatic")]
+    public Storage storage;
+    public RessourceReducer reducer;
     public List<PlanetStructure> structures;
-    public string planetName;
-    [TextArea] string planetDescription;
+
+    int currentDangerLevel = 0;
 
     private void Start()
     {
@@ -27,6 +35,7 @@ public class Planet : MonoBehaviour
     private void Update()
     {
         isDead = (storage.resources.organic <= 0);
+        EventManager.RemainingLifetimeEvent(this, CheckDangerLevel());
     }
 
     private void OnMouseDown()
@@ -66,5 +75,29 @@ public class Planet : MonoBehaviour
             GameObject newObject = Instantiate(blueprint.prefab);
             newObject.transform.position = transform.position + Vector3.up;
         }
+    }
+
+    public float CheckDangerLevel()
+    {
+
+        float remainingLifeTime = reducer.RemainingLifeTime();
+        for (int n = GameRule.DangerLevels.Length - 1; n >= 0; n--)
+        {
+            if (remainingLifeTime < GameRule.DangerLevels[n])
+            {
+                if (currentDangerLevel != n + 1)
+                {
+                    currentDangerLevel = n + 1;
+                    EventManager.DangerLevelUpdated(this, currentDangerLevel);
+                }
+                return remainingLifeTime;
+            }
+        }
+        if (currentDangerLevel != 0)
+        {
+            currentDangerLevel = 0;
+            EventManager.DangerLevelUpdated(this, currentDangerLevel);
+        }
+        return remainingLifeTime;
     }
 }

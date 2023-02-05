@@ -6845,6 +6845,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6836904584056561681, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: reductionPerSecond.organic
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
+      propertyPath: isHome
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5958073753611407312, guid: 130df23476ded8046bbaa82f88c9e086, type: 3}
       propertyPath: isExplored
       value: 1
