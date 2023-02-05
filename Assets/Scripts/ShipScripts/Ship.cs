@@ -12,7 +12,7 @@ public class Ship : MonoBehaviour
     public string name = "Spaceship";
 
     // For Traveling
-    private bool IsTraveling;
+    private bool IsTraveling = false;
     private float TravelTimer;
     private Vector3 travelDirection;
 
@@ -31,6 +31,7 @@ public class Ship : MonoBehaviour
         storage = gameObject.GetComponentInChildren<Storage>();
         EventManager.ShipTravelAction += TravelToTarget;
         audioSource = GetComponent<AudioSource>();
+        transform.position = new Vector3(transform.position.x, 1, transform.position.z);
     }
 
     private void OnDestroy()
