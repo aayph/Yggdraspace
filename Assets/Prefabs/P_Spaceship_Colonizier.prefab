@@ -78,7 +78,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 5, z: 1}
+  m_Size: {x: 0.75, y: 3, z: 1}
   m_Center: {x: 0, y: 0.19, z: 0}
 --- !u!114 &415280886198591791
 MonoBehaviour:
@@ -95,7 +95,7 @@ MonoBehaviour:
   resources:
     organic: 0
     metal: 0
-    water: 10
+    water: 20
 --- !u!54 &4673520998638375270
 Rigidbody:
   m_ObjectHideFlags: 0
