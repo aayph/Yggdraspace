@@ -24,6 +24,12 @@ public class EventManager
         ShipTravelAction?.Invoke(target);
     }
 
+    public static event Action ShipTravelTooExpensive;
+    public static void OpenTooExpensivePopUp()
+    {
+        ShipTravelTooExpensive?.Invoke();
+    }
+
 
 
     public static event Action<Planet> PlanetAction;
@@ -50,10 +56,10 @@ public class EventManager
 
 
     //0 - 2
-    public static event Action<int> DangerLevelUpdate;
-    public static void DangerLevelUpdated(int dangerLevel)
+    public static event Action<Planet, int> DangerLevelUpdate;
+    public static void DangerLevelUpdated(Planet planet, int dangerLevel)
     {
-        DangerLevelUpdate?.Invoke(dangerLevel);
+        DangerLevelUpdate?.Invoke(planet, dangerLevel);
     }
 
 
@@ -68,5 +74,19 @@ public class EventManager
     public static void PlanetHoverEvent(Planet planet, bool isOpened)
     {
         PlanetHoverAction?.Invoke(planet, isOpened);
+    }
+
+
+    public static event Action<string, string, Resources> TooltipAction;
+    public static void TooltipEvent(string title, string content, Resources res)
+    {
+        TooltipAction?.Invoke(title, content, res);
+    }
+
+
+    public static event Action<Planet, float> RemainingLifetimeAction;
+    public static void RemainingLifetimeEvent(Planet planet, float remainingTime)
+    {
+        RemainingLifetimeAction?.Invoke(planet, remainingTime);
     }
 }

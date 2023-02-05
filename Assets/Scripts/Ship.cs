@@ -41,7 +41,10 @@ public class Ship : MonoBehaviour
         {
             transform.Rotate(0, Vector3.Angle(travelDirection, transform.forward), 0, Space.Self);
             transform.position = transform.position + travelDirection * TravelSpeed * Time.deltaTime;
-            storage.resources.water -= EnergyConsumptionrate * Time.deltaTime;
+            if (GameRule.TravelIsContinous)
+            {
+                storage.resources.water -= EnergyConsumptionrate * Time.deltaTime;
+            }
             TravelTimer -= Time.deltaTime;
             if (TravelTimer <= 0)
             {
@@ -52,6 +55,10 @@ public class Ship : MonoBehaviour
 
     void OnMouseOver()
     {
+        if (!GameRule.TravelIsContinous && IsTraveling)
+        { 
+            return; 
+        }
         if (Input.GetMouseButtonDown(0) && !GameStates.isInTravelSelection)
         {
             EventManager.OnShipClickEvent(gameObject);
@@ -81,9 +88,13 @@ public class Ship : MonoBehaviour
         // Do not travel if it would cost more energy then stored
         if (TravelTimer * EnergyConsumptionrate > storage.resources.water)
         {
-            // TODO Pop Up Can't afford this journey
             ResetTravelValues();
-            Debug.Log("Can't afford this journey");
+            EventManager.OpenTooExpensivePopUp();
+            return;
+        }
+        if (!GameRule.TravelIsContinous)
+        {
+            storage.resources.water -= TravelTimer * EnergyConsumptionrate;
         }
         else
         {
@@ -100,9 +111,19 @@ public class Ship : MonoBehaviour
     {
         if (closestPlanet != null)
         {
-            // WIP
             Storage planetStorage = closestPlanet.GetComponentInChildren<Storage>();
-            storage.transferAllResources(planetStorage);
+            switch (GameRule.depletionDuringLanding)
+            {
+                case GameRule.DepletionOptions.All:
+                    storage.transferAllResources(planetStorage);
+                    break;
+                case GameRule.DepletionOptions.None:
+                    break;
+                case GameRule.DepletionOptions.AllButFuel:
+                    storage.transferMetal(planetStorage, storage.resources.metal);
+                    storage.transferOrganic(planetStorage, storage.resources.organic);
+                    break;
+            }            
         }
         ResetTravelValues();
         audioSource.loop = false;
