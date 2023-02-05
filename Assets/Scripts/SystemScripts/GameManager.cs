@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
         EventManager.PlanetColonizedAction += OnPlanetColonized;
         EventManager.PlanetYggdrasilationAction += OnPlanetYggralized;
+        EventManager.RemainingLifetimeAction += OnTimeRemaingUpdate;
     }
 
     public AudioManager GetAudioManager()
@@ -77,6 +78,22 @@ public class GameManager : MonoBehaviour
             GameStates.gameProgress = newProgress;
             EventManager.GameProgressUpdated(newProgress);
         }
+    }
+
+    void OnTimeRemaingUpdate(Planet planet, float remainingTime)
+    {
+        if (!planet.isHome) return;
+        if (planet.storage.resources.organic <= 0f)
+            EndGame(false);
+        if (planet.storage.resources.organic >= GameStates.targetResources)
+            EndGame(true);
+    }
+
+    void EndGame(bool gameWon)
+    {
+        if (GameStates.gameWon) return;
+        GameStates.gameWon = gameWon;
+        EventManager.GameEndEvent(gameWon);
     }
 
     void OnPlanetYggralized(Planet planet)

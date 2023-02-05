@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -48,9 +48,17 @@ public class HUD : MonoBehaviour
     void UpdateRemainingTime(Planet planet, float time)
     {
         if (!planet.isHome) return;
-        remainingTime.text = String.Format("Food left for {0:00}:{1:00}", Mathf.FloorToInt(time) / 60, Mathf.FloorToInt(time) % 60);
+        if (planet.storage.resources.organic == float.PositiveInfinity)
+        {
+            remainingTime.text = "Food left for ∞";
+            progressField.text = String.Format("∞ / {0:0} (∞%)", GameStates.targetResources);
+        }
+        else
+        {
+            remainingTime.text = String.Format("Food left for {0:00}:{1:00}", Mathf.FloorToInt(time) / 60, Mathf.FloorToInt(time) % 60);
+            progressField.text = String.Format("{0:0} / {1:0} ({2:0.0}%)", planet.storage.resources.organic, GameStates.targetResources, (planet.storage.resources.organic / GameStates.targetResources) * 100f);
+        }
 
-        progressField.text = String.Format("{0:0} / {1:0} ({2:0.00}%)", planet.storage.resources.organic, GameStates.targetResources, planet.storage.resources.organic / GameStates.targetResources);
     }
 
     void AddPlanet(Planet planet)

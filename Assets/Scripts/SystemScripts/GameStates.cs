@@ -14,6 +14,7 @@ public class GameStates
     public static Vector3 yggdrasilPosition = Vector3.one;
     public static float gameProgress = 0f;
     public static float targetResources = 10000f;
+    public static bool gameWon = false;
 
     public static void Reset()
     {
@@ -23,5 +24,6 @@ public class GameStates
         isPlanetMenuOpen = false;
         traveler = null;
         gameProgress = 0f;
+        gameWon = false;
     }
 }

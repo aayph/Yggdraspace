@@ -122,4 +122,11 @@ public class EventManager
     {
         PlanetExploreAction?.Invoke(planet);
     }
+
+
+    public static event Action<bool> GameEndAction;
+    public static void GameEndEvent(bool gameWon)
+    {
+        GameEndAction?.Invoke(gameWon);
+    }
 }
