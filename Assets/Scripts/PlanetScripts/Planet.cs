@@ -26,6 +26,18 @@ public class Planet : MonoBehaviour
 
     int currentDangerLevel = 0;
 
+    private void Awake()
+    {
+        EventManager.PlanetExploreAction += OnExplore;
+        EventManager.PlanetColonizedAction += OnColonize;
+    }
+
+    private void OnDestroy()
+    {
+        EventManager.PlanetExploreAction -= OnExplore;
+        EventManager.PlanetColonizedAction -= OnColonize;
+    }
+
     private void Start()
     {
         storage = GetComponent<Storage>();
@@ -40,6 +52,18 @@ public class Planet : MonoBehaviour
     {
         isDead = (storage.resources.organic <= 0);
         EventManager.RemainingLifetimeEvent(this, CheckDangerLevel());
+    }
+
+    private void OnExplore(Planet planet)
+    {
+        if (planet != this) return;
+        isExplored = true;
+    }
+
+    private void OnColonize(Planet planet)
+    {
+        if (planet != this) return;
+        isColonized = true;
     }
 
     private void OnMouseDown()
