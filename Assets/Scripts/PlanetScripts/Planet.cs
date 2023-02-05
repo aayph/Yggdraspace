@@ -28,14 +28,21 @@ public class Planet : MonoBehaviour
 
     private void Awake()
     {
+        if (isHome)
+            GameStates.homePosition = transform.position;
+        if (isYggdrasized && !isColonized)
+            GameStates.yggdrasilPosition = transform.position;
+
         EventManager.PlanetExploreAction += OnExplore;
         EventManager.PlanetColonizedAction += OnColonize;
+        EventManager.PlanetColonizedAction += OnYggdralized;
     }
 
     private void OnDestroy()
     {
         EventManager.PlanetExploreAction -= OnExplore;
         EventManager.PlanetColonizedAction -= OnColonize;
+        EventManager.PlanetColonizedAction -= OnYggdralized;
     }
 
     private void Start()
@@ -50,7 +57,12 @@ public class Planet : MonoBehaviour
 
     private void Update()
     {
-        isDead = (storage.resources.organic <= 0);
+        bool newDeadState = reducer.IsDead();
+        if (isDead != newDeadState)
+        {
+            isDead = newDeadState;
+            EventManager.PlanetDeadEvent(this, newDeadState);
+        }
         EventManager.RemainingLifetimeEvent(this, CheckDangerLevel());
     }
 
@@ -64,6 +76,12 @@ public class Planet : MonoBehaviour
     {
         if (planet != this) return;
         isColonized = true;
+    }
+
+    private void OnYggdralized(Planet planet)
+    {
+        if (planet != this) return;
+        isYggdrasized = true;
     }
 
     private void OnMouseDown()
